@@ -1,185 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deeps Firms Ltd — Audit, Advisory & Consulting</title>
-  <style>
-    :root {
-      --navy: #0f2a44;
-      --blue: #2563eb;
-      --cyan: #38bdf8;
-      --bg: #f5f7fb;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #64748b;
-      --border: #e5e7eb;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Deeps Firms Ltd — Audit, Advisory & AI Consulting</title>
 
-    * { box-sizing: border-box; }
+<style>
+:root{
+  --navy:#0f2a44; --blue:#2563eb; --cyan:#38bdf8;
+  --bg:#f5f7fb; --card:#fff; --text:#0f172a;
+  --muted:#64748b; --border:#e5e7eb;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}
 
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-    }
+header{
+  background:linear-gradient(90deg,var(--navy),var(--blue));
+  color:#fff;padding:18px 32px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+header strong{font-size:18px}
+header button{
+  background:rgba(255,255,255,.15);border:0;color:#fff;
+  padding:10px 14px;border-radius:8px;margin-left:8px;cursor:pointer
+}
 
-    header {
-      background: linear-gradient(90deg, var(--navy), var(--blue));
-      color: white;
-      padding: 18px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+main{max-width:1200px;margin:auto;padding:64px 32px}
+h1{font-size:44px;margin-bottom:16px}
+h2{font-size:28px;margin-top:0}
+.hidden{display:none}
 
-    header strong { font-size: 18px; }
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.hero-box{
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  color:#fff;padding:48px;border-radius:20px
+}
+.hero-actions button{
+  padding:12px 18px;border-radius:10px;border:0;cursor:pointer;margin-right:10px
+}
+.primary{background:#fff;color:var(--navy);font-weight:600}
+.secondary{background:rgba(255,255,255,.15);color:#fff}
 
-    header button {
-      background: rgba(255,255,255,0.15);
-      border: none;
-      color: white;
-      padding: 10px 14px;
-      border-radius: 8px;
-      margin-left: 8px;
-      cursor: pointer;
-      font-weight: 500;
-    }
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:64px}
+.card{
+  background:var(--card);padding:28px;border-radius:16px;
+  box-shadow:0 15px 35px rgba(0,0,0,.08)
+}
+.service-icon{
+  width:44px;height:44px;border-radius:10px;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));margin-bottom:14px
+}
 
-    main { max-width: 1200px; margin: auto; padding: 64px 32px; }
+input{
+  width:100%;padding:12px;margin-top:10px;border-radius:8px;
+  border:1px solid var(--border);font-size:14px
+}
+button.submit{
+  background:var(--blue);color:#fff;border:0;
+  padding:12px;border-radius:10px;width:100%;
+  margin-top:16px;font-weight:600;cursor:pointer
+}
 
-    h1 { font-size: 44px; margin-bottom: 16px; }
-    h2 { font-size: 28px; margin-top: 0; }
-    h3 { margin-top: 0; }
+.dashboard{display:grid;grid-template-columns:260px 1fr;gap:32px}
+.sidebar{
+  background:var(--card);padding:24px;border-radius:16px
+}
+.sidebar button{
+  display:block;width:100%;padding:10px;margin-bottom:10px;
+  border-radius:8px;border:0;background:#f1f5f9;cursor:pointer
+}
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
+footer{text-align:center;padding:32px;color:var(--muted)}
 
-    .hero p { font-size: 18px; color: #e5edff; }
-
-    .hero-box {
-      background: linear-gradient(135deg, var(--navy), var(--blue));
-      color: white;
-      padding: 48px;
-      border-radius: 20px;
-    }
-
-    .hero-actions button {
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-size: 15px;
-      border: none;
-      cursor: pointer;
-      margin-right: 10px;
-    }
-
-    .primary { background: white; color: var(--navy); font-weight: 600; }
-    .secondary { background: rgba(255,255,255,0.15); color: white; }
-
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 24px; }
-
-    .card {
-      background: var(--card);
-      padding: 28px;
-      border-radius: 16px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    }
-
-    .service-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      margin-bottom: 14px;
-    }
-
-    .hidden { display: none; }
-
-    input, select {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      font-size: 14px;
-    }
-
-    button.submit {
-      background: var(--blue);
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 10px;
-      width: 100%;
-      margin-top: 16px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .dashboard {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 32px;
-    }
-
-    .sidebar {
-      background: var(--card);
-      padding: 24px;
-      border-radius: 16px;
-      height: fit-content;
-    }
-
-    .sidebar button {
-      display: block;
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-      border: none;
-      background: #f1f5f9;
-      cursor: pointer;
-    }
-
-    footer { text-align: center; padding: 32px; color: var(--muted); }
-
-    /* Chat */
-    .chat {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      width: 340px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-    }
-
-    .chat-header {
-      background: linear-gradient(90deg, var(--navy), var(--blue));
-      color: white;
-      padding: 14px;
-      font-weight: 600;
-    }
-
-    .chat-body { padding: 14px; height: 220px; overflow-y: auto; font-size: 14px; }
-    .msg.user { text-align: right; color: var(--blue); margin-bottom: 8px; }
-    .msg.bot { margin-bottom: 8px; }
-
-    .chat-input { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border); }
-
-    @media(max-width: 900px) {
-      .hero { grid-template-columns: 1fr; }
-      .dashboard { grid-template-columns: 1fr; }
-    }
-  </style>
+.chatbot{
+  position:fixed;bottom:20px;right:20px;width:340px;
+  background:#fff;border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,.25);
+  overflow:hidden
+}
+.chat-header{
+  background:linear-gradient(90deg,var(--navy),var(--blue));
+  color:#fff;padding:14px;font-weight:600;cursor:pointer;
+  display:flex;justify-content:space-between
+}
+.chat-body{padding:14px;height:220px;overflow-y:auto;font-size:14px}
+.msg.user{text-align:right;color:var(--blue);margin-bottom:8px}
+.msg.bot{margin-bottom:8px}
+.chat-input{display:flex;gap:8px;padding:12px;border-top:1px solid var(--border)}
+.chat-input input{flex:1}
+</style>
 </head>
+
 <body>
 
 <header>
@@ -196,7 +107,7 @@
   <div class="hero">
     <div class="hero-box">
       <h1>Audit. Advisory. Assurance.</h1>
-      <p>Deeps Firms Ltd is a modern financial auditing and consulting firm delivering trust, transparency, and insight — inspired by global leaders like PwC.</p>
+      <p>Modern audit, risk, compliance and AI-supported advisory services inspired by global firms like PwC.</p>
       <div class="hero-actions">
         <button class="primary" onclick="showSignup()">Become a Client</button>
         <button class="secondary" onclick="openChat()">Talk to Deeps AI</button>
@@ -204,21 +115,20 @@
     </div>
     <div class="card">
       <h3>What We Do</h3>
-      <p>We help organisations navigate audits, financial risk, regulatory compliance, and strategic growth.</p>
       <ul>
         <li>✔ Financial & statutory audits</li>
-        <li>✔ Risk & internal control review</li>
-        <li>✔ Tax & compliance advisory</li>
-        <li>✔ Business transformation</li>
+        <li>✔ Risk & compliance assurance</li>
+        <li>✔ Regulatory advisory</li>
+        <li>✔ AI-powered consulting</li>
       </ul>
     </div>
   </div>
 
-  <div style="margin-top:64px" class="grid">
-    <div class="card"><div class="service-icon"></div><h3>Audit & Assurance</h3><p>Independent audits that strengthen trust with regulators, investors, and stakeholders.</p></div>
-    <div class="card"><div class="service-icon"></div><h3>Risk & Compliance</h3><p>Enterprise risk, internal controls, governance, and regulatory readiness.</p></div>
-    <div class="card"><div class="service-icon"></div><h3>Advisory</h3><p>Transaction support, restructuring, and financial strategy.</p></div>
-    <div class="card"><div class="service-icon"></div><h3>AI‑Powered Support</h3><p>Instant answers, document guidance, and audit readiness checks.</p></div>
+  <div class="grid">
+    <div class="card"><div class="service-icon"></div><h3>Audit & Assurance</h3><p>Independent audits that build trust.</p></div>
+    <div class="card"><div class="service-icon"></div><h3>Risk & Compliance</h3><p>Enterprise risk & regulatory readiness.</p></div>
+    <div class="card"><div class="service-icon"></div><h3>Advisory</h3><p>Strategic finance & transformation.</p></div>
+    <div class="card"><div class="service-icon"></div><h3>AI Support</h3><p>Instant advisory & compliance guidance.</p></div>
   </div>
 </main>
 
@@ -259,17 +169,18 @@
     </div>
     <div class="card">
       <h2>Client Portfolio</h2>
-      <p>Below is a list of registered clients (demo).</p>
       <ul id="clientList"></ul>
     </div>
   </div>
 </main>
 
-<!-- CHAT -->
-<div id="chat" class="chat hidden">
-  <div class="chat-header">Deeps AI Assistant</div>
+<!-- CHATBOT -->
+<div id="chatbot" class="chatbot hidden">
+  <div class="chat-header" onclick="openChat()">
+    <span>Deeps AI Assistant</span><span>×</span>
+  </div>
   <div id="chatBody" class="chat-body">
-    <div class="msg bot">Hello — I’m Deeps Assist. Ask me about audits, compliance, or our services.</div>
+    <div class="msg bot">Hello — ask about audits, compliance, or advisory services.</div>
   </div>
   <div class="chat-input">
     <input id="chatInput" placeholder="Ask a question…" />
@@ -277,61 +188,49 @@
   </div>
 </div>
 
-<footer>© 2026 Deeps Firms Ltd — Audit & Advisory Demo</footer>
+<footer>© 2026 Deeps Firms Ltd — Audit, Advisory & AI Consulting</footer>
 
 <script>
-  const USERS = [
-    { name: 'Super Admin', company: 'Deeps Firms Ltd', email: 'admin@deeps.com', password: '2222ffff', role: 'admin' },
-    { name: 'Jane Audu', company: 'Audu Holdings', email: 'jane@client.com', password: 'jane123', role: 'client' },
-    { name: 'Tunde Bello', company: 'Bello Capital', email: 'tunde@capital.com', password: 'tunde123', role: 'client' }
-  ];
+const USERS=[
+ {name:'Super Admin',company:'Deeps Firms Ltd',email:'admin@deeps.com',password:'2222ffff',role:'admin'},
+ {name:'Jane Audu',company:'Audu Holdings',email:'jane@client.com',password:'jane123',role:'client'}
+];
 
-  function showLogin(){ switchView('login'); }
-  function showSignup(){ switchView('signup'); }
+function switchView(id){
+ ['landing','login','signup','dashboard'].forEach(v=>document.getElementById(v).classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+}
+function showLogin(){switchView('login')}
+function showSignup(){switchView('signup')}
 
-  function switchView(id){
-    ['landing','login','signup','dashboard'].forEach(v=>document.getElementById(v).classList.add('hidden'));
-    document.getElementById(id).classList.remove('hidden');
-  }
+function login(){
+ const u=USERS.find(x=>x.email===loginEmail.value&&x.password===loginPassword.value);
+ if(!u){loginError.textContent='Invalid login';return;}
+ localStorage.setItem('session',JSON.stringify(u));
+ loadDashboard();
+}
+function signup(){
+ USERS.push({name:signupName.value,company:signupCompany.value,email:signupEmail.value,password:signupPassword.value,role:'client'});
+ signupMsg.textContent='Account created — login now.';
+}
+function loadDashboard(){
+ switchView('dashboard');
+ clientList.innerHTML=USERS.filter(u=>u.role==='client').map(u=>`<li>${u.name} — ${u.company}</li>`).join('');
+}
+function logout(){localStorage.clear();location.reload()}
 
-  function login(){
-    const u = USERS.find(x => x.email === loginEmail.value && x.password === loginPassword.value);
-    if(!u){ loginError.textContent='Invalid login details'; return; }
-    localStorage.setItem('session', JSON.stringify(u));
-    loadDashboard();
-  }
+function openChat(){document.getElementById('chatbot').classList.toggle('hidden')}
+function sendChat(){
+ const q=chatInput.value.trim(); if(!q) return;
+ chatBody.innerHTML+=`<div class='msg user'>${q}</div>`;
+ chatInput.value='';
+ setTimeout(()=>{
+   chatBody.innerHTML+=`<div class='msg bot'>A consultant will follow up. Deeps AI is logging your request.</div>`;
+   chatBody.scrollTop=chatBody.scrollHeight;
+ },500);
+}
 
-  function signup(){
-    USERS.push({
-      name: signupName.value,
-      company: signupCompany.value,
-      email: signupEmail.value,
-      password: signupPassword.value,
-      role: 'client'
-    });
-    signupMsg.textContent = 'Account created — you can now log in.';
-  }
-
-  function loadDashboard(){
-    switchView('dashboard');
-    clientList.innerHTML = USERS.filter(u=>u.role==='client').map(u=>`<li>${u.name} — ${u.company}</li>`).join('');
-  }
-
-  function logout(){ localStorage.clear(); location.reload(); }
-
-  function openChat(){ chat.classList.toggle('hidden'); }
-
-  function sendChat(){
-    const q = chatInput.value.trim(); if(!q) return;
-    chatBody.innerHTML += `<div class='msg user'>${q}</div>`;
-    chatInput.value='';
-    setTimeout(()=>{
-      chatBody.innerHTML += `<div class='msg bot'>Our audit and advisory teams help ensure compliance, transparency, and growth. A consultant will follow up if needed.</div>`;
-      chatBody.scrollTop = chatBody.scrollHeight;
-    },600);
-  }
-
-  if(localStorage.getItem('session')) loadDashboard();
+if(localStorage.getItem('session')) loadDashboard();
 </script>
 
 </body>
